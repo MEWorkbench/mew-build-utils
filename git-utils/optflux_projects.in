@@ -1,0 +1,1 @@
+PROJECTS=(optflux-launcher optflux-core optflux-simulation optflux-optimization optflux-dbreader optflux-efm optflux-regulatorytool optflux-optknock optflux-simplification optflux-tna optflux-insertreactions optflux-mfa optflux-metabolicvisualizer optflux-addreactions optflux-rbc optflux-cobra optflux-mcs optflux-sampling optflux-regulatory optflux-memote optflux)
