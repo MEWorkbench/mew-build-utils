@@ -30,12 +30,16 @@ case "$1" in
 	push)
 		mew_release
 		exit;;
+	pull)
+		pull
+		exit;;
 	*)
 		echo "Use parameter:"
 		echo "   prepare: to prepare build"
 		echo "   reset  : to reset build"
 		echo "   submit : to push to server"
 		echo "   clean  : remove src folder $SRC_BUILD"
+		echo "   pull   : to pull all repositories"
 		echo "   push   : send to git"
 esac
 

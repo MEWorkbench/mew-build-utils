@@ -2,6 +2,12 @@ function clean(){
 	rm -rf $SRC_BUILD
 }
 
+function pull(){
+	cd $SRC_BUILD
+	./git-generic-jecoli.sh pull
+	./git-generic-mew.sh pull
+}
+
 
 function mew_make(){
 	
@@ -30,16 +36,37 @@ function mew_make(){
 	
 }
 
+
+#dependent variables
+
+
+function deploy_maven(){
+	PROJECTS=$@
+	H2_HOME=$HOME/.deploym2
+	$M2REPOSITORY=
+	mkdir -p ${M2REPOSITORY}=$H2_HOME/repository
+
+	for p in "${PROJECTS[@]}"
+	do
+		_proj=($p)
+		cd _proj && 
+		mvn -s ${H2_HOME}/settings.xml -Dmaven.repo.local=$M2REPOSITORY -Dcplex.jar.path=${CPLEX_JAR} -P gpg,release-oss-repo deploy &&
+		cd .. 
+	done
+	
+}
+
 function mew_release(){
 	cd $SRC_BUILD
-	release ./git-generic-mew.sh
 	release ./git-generic-jecoli.sh
+	release ./git-generic-mew.sh
+	
 }
 
 function release(){
 	GIT=$1
-	$GIT push origin master &&
-	$GIT push origin --tags &&
+	$GIT push origin master
+	$GIT push origin --tags
 	$GIT push origin dev
 	
 	
