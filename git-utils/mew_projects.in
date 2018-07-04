@@ -1,1 +1,1 @@
-PROJECTS=(utilities solvers solvers.cplex biocomponents mewcore mewcore.matlab availablemodelsapi biovisualizercore guiutilities biologicalnetscore regulatorycore mcslibrary mew-regulatory mewcore.cmd)
+PROJECTS=(utilities solvers solvers.cplex biocomponents mewcore mewcore.matlab availablemodelsapi guiutilities biovisualizercore biologicalnetscore regulatorycore mcslibrary mew-regulatory mewcore.cmd)
