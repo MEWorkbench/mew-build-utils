@@ -37,6 +37,9 @@ case "$1" in
 	pull)
 		pull
 		exit;;
+	compile)
+		compile
+		exit;;
 	nexus_deploy)
 		nexus_deploy
 		exit;;
@@ -53,7 +56,11 @@ case "$1" in
 	show_configurations)
 		cat $conf
 		exit;;
-
+	replace_mew_version)
+		shift
+		replace_mew_version_2 $1 $SRC_BUILD/log.txt
+		rm $SRC_BUILD/log.txt
+		exit;;
 	*)
 		echo "Use parameter:"
 		echo "   prepare: to prepare build"
