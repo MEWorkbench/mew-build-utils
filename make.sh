@@ -71,6 +71,7 @@ case "$1" in
 		echo "   push   : send to git"
 		echo "   configure_gpg: configure gpg on mac"
 		echo "   show_configurations: "
+		echo "   nexus_deploy"
 esac
 
 # news 

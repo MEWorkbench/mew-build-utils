@@ -288,7 +288,7 @@ function reset(){
 function __commit_deploy__version(){
 	GIT=$1
 	 
-	$GIT add -A
+	$GIT add -u
 	
 	MESSAGE="[DEPLOY]$DEPLOY_VERSION" 
 	$GIT commit -m $MESSAGE
@@ -301,7 +301,7 @@ function __commit_deploy__version(){
 function __commit_snapshot__version(){
 	GIT=$1
 	
-	$GIT add -A
+	$GIT add -u
 	MESSAGE="[prepare]$NEXT_MEW_VERSION"
 	
 	$GIT commit -m $MESSAGE 
